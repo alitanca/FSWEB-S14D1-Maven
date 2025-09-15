@@ -14,6 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(ResultAnalyzer.class)
 public class MainTest {
@@ -123,7 +124,7 @@ public class MainTest {
         assertEquals(String.format("%.2f", cuboid.getVolume()), "6.00");
     }
 
-    @DisplayName("Employee sınıf değişkenleri doğru access modifier a sahip mi ?")
+    @DisplayName("com.workintech.developers.Employee sınıf değişkenleri doğru access modifier a sahip mi ?")
     @Test
     public void testEmployeeAccessModifiers() throws NoSuchFieldException {
         Field idField = employee.getClass().getDeclaredField("id");
@@ -134,7 +135,7 @@ public class MainTest {
         assertEquals(salaryField.getModifiers(), 2);
     }
 
-    @DisplayName("Employee sınıf değişkenleri doğru type a sahip mi ?")
+    @DisplayName("com.workintech.developers.Employee sınıf değişkenleri doğru type a sahip mi ?")
     @Test
     public void testEmployeeTypes() throws NoSuchFieldException {
         assertThat(employee.getId(), instanceOf(Number.class));
@@ -142,7 +143,7 @@ public class MainTest {
         assertThat(employee.getSalary(), instanceOf(Number.class));
     }
 
-    @DisplayName("Employee sınıfından doğru türeyen sınıflar var mı ?")
+    @DisplayName("com.workintech.developers.Employee sınıfından doğru türeyen sınıflar var mı ?")
     @Test
     public void testEmployeeSubClasses() throws NoSuchFieldException {
         assertThat(hrManager, instanceOf(Employee.class));
